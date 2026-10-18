@@ -40,12 +40,11 @@ export const projects = [
     {
         id: 1,
         title: 'Nube Medica',
-        description: 'Pagina web diseñada para Trabajadores del area de salud indepencientes',
-        image: 'https://placehold.co/600x360?text=Nube+Medica',
+        description: 'Página web diseñada para trabajadores del área de salud independientes.',
+        image: 'https://placehold.co/600x360/e63946/fff?text=Nube+Medica',
         repoUrl: 'https://github.com/Ivan003D',
-        tags: ['Web'],
+        tags: ['Web', 'React'],
     },
-
 ]
 
 export const contactInfo = {

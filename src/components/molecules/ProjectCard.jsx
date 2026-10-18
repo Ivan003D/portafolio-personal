@@ -4,16 +4,25 @@ import TechTag from '../atoms/TechTag'
 
 const ProjectCard = ({ title, description, image, repoUrl, tags = [] }) => (
   <Card
+    className="project-card"
     hoverable
-    cover={<img src={image} alt={`Previsualización de ${title}`} />}
+    cover={
+      <div className="project-cover">
+        <img src={image} alt={`Previsualización de ${title}`} />
+        <div className="project-overlay" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <span className="project-tag">Ver proyecto</span>
+        </div>
+      </div>
+    }
     actions={[
       <Button
         key="repo"
         type="link"
         href={repoUrl}
-        target="_blank" //este hace que abre en una pestaña nueva
-        rel="noopener noreferrer" //esta es una medida de seguridad para enlaces externos
+        target="_blank"
+        rel="noopener noreferrer"
         icon={<GithubOutlined />}
+        style={{ color: '#f8fafc' }}
       >
         Ver repositorio
       </Button>,
@@ -22,7 +31,7 @@ const ProjectCard = ({ title, description, image, repoUrl, tags = [] }) => (
     <Card.Meta title={title} description={description} />
     <Space wrap style={{ marginTop: 12 }}>
       {tags.map((tag) => (
-        <TechTag key={tag}>{tag}</TechTag> //recorre la lista de tecnologías y crea un TechTag por cada una. El key={tag} es obligatorio en React para identificar cada elemento de una lista
+        <TechTag key={tag}>{tag}</TechTag>
       ))}
     </Space>
   </Card>

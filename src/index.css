@@ -1,11 +1,222 @@
+/* ============================================================
+   PALETA "PIRATA PROFESIONAL" — One Piece inspirado, tono serio.
+   Cambia los colores aquí si quieres otro tono de marca.
+   ============================================================ */
+:root {
+  /* Fondo principal */
+  --bg: #0b1120;
+  --bg-card: #12192b;
+  --bg-hover: #182138;
+
+  /* Acentos */
+  --accent: #e63946;
+  --accent-hover: #ff5462;
+  --accent-soft: rgba(230, 57, 70, 0.12);
+  --accent-border: rgba(230, 57, 70, 0.35);
+
+  --gold: #f59e0b;
+  --gold-soft: rgba(245, 158, 11, 0.12);
+  --gold-border: rgba(245, 158, 11, 0.35);
+
+  /* Texto */
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  /* Bordes y sombras */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+
+  /* Tipografía */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+
+  /* Espacios */
+  --radius: 12px;
+  --radius-lg: 16px;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 section[id] {
-  scroll-margin-top: 72px;
+  scroll-margin-top: 96px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+.section-wrapper {
+  padding: 96px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .section-wrapper {
+    padding: 64px 16px;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.15); }
+}
+
+/* Tarjetas de proyecto */
+.project-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-hover);
+}
+.project-cover {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  aspect-ratio: 16 / 9;
+}
+.project-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.project-card:hover .project-cover img {
+  transform: scale(1.05);
+}
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 17, 32, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  border-radius: 12px 12px 0 0;
+}
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+.project-tag {
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: #e63946;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(230, 57, 70, 0.45);
+}
+
+/* Timeline personalizado */
+.custom-timeline .ant-timeline-item-head-custom {
+  background: transparent;
+}
+.custom-timeline .ant-timeline-item-head {
+  border: none;
+}
+.custom-timeline .ant-timeline-item-head-inner {
+  box-shadow: none;
+}
+.custom-timeline .ant-timeline-item-head-inner {
+  background: var(--bg-card);
+}
+.custom-timeline .ant-timeline-item-head-inner::before,
+.custom-timeline .ant-timeline-item-head-inner::after {
+  display: none;
+}
+.custom-timeline .ant-timeline-item {
+  padding-bottom: 24px;
+}
+.custom-timeline .ant-timeline-item-content {
+  background: transparent;
+}
+
+/* Tags de tecnología en dorado */
+.tech-tag,
+.ant-tag {
+  background: rgba(245, 158, 11, 0.12) !important;
+  border: 1px solid rgba(245, 158, 11, 0.35) !important;
+  color: #fbbf24 !important;
+}
+
+/* Hover suave en botones sociales */
+.social-btn {
+  transition: all 0.3s ease;
+}
+.social-btn:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: var(--border-hover) !important;
+  color: #fff !important;
 }
