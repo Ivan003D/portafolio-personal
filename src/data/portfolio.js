@@ -1,6 +1,6 @@
 //Aqui va a ir toda la info que quiero colocar en el portafolio
 import fotoperfil from '../assets/perfil.jpg'
-import nubemedica from '../assets/nubemedica.jpg'
+import nubemedica from '../assets/nubemedic.jpg'//esta si
 
 export const profile = {
     name: 'Ivan Alejandro Gómez Castro',
