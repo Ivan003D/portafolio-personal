@@ -1,5 +1,6 @@
 //Aqui va a ir toda la info que quiero colocar en el portafolio
 import fotoperfil from '../assets/perfil.jpg'
+import nubemedica from '../assets/nubemedica.jpg'
 
 export const profile = {
     name: 'Ivan Alejandro Gómez Castro',
@@ -41,7 +42,7 @@ export const projects = [
         id: 1,
         title: 'Nube Medica',
         description: 'Página web diseñada para trabajadores del área de salud independientes.',
-        image: 'https://placehold.co/600x360/e63946/fff?text=Nube+Medica',
+        image: nubemedica,
         repoUrl: 'https://github.com/Ivan003D',
         tags: ['Web', 'React'],
     },
