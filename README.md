@@ -1,16 +1,54 @@
-# React + Vite
+# Portafolio Personal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este portafolio representa mi CV profesional. Está construido con **React + Vite** y utiliza las librerías de diseño de **Ant Design (antd)**.
 
-Currently, two official plugins are available:
+## Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [React](https://react.dev/) — librería para construir interfaces de usuario
+- [Vite](https://vitejs.dev/) — entorno de desarrollo rápido
+- [Ant Design](https://ant.design/) — componentes de diseño (antd)
 
-## React Compiler
+## Estructura de carpetas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+├── assets/           # Imágenes y recursos estáticos
+├── components/
+│   ├── atoms/        # Componentes pequeños y reutilizables
+│   ├── molecules/    # Componentes combinados de átomos
+│   ├── organisms/    # Secciones completas (Navbar, Footer, secciones, etc.)
+│   ├── pages/        # Páginas principales (HomePage)
+│   └── templates/    # Plantilla base del portafolio
+├── data/             # Datos del portafolio (proyectos, experiencia, educación, etc.)
+├── hooks/            # Hooks personalizados
+├── App.jsx           # Componente raíz con ConfigProvider de antd
+├── index.css         # Estilos globales y variables de marca
+└── main.jsx          # Punto de entrada de la aplicación
+```
 
-## Expanding the ESLint configuration
+## Instalación y ejecución
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
+
+# Construir para producción
+npm run build
+
+# Previsualizar build de producción
+npm run preview
+
+# Ejecutar pruebas
+npm test
+```
+
+## Personalización
+
+Los colores y la tipografía están definidos como variables CSS en `src/index.css` y en el tema de Ant Design en `src/App.jsx`. Puedes modificarlos fácilmente para adaptar la apariencia a tu gusto.
+
+---
+
+Desarrollado por **Ivan Alejandro Gómez Castro** — Desarrollador Full Stack
